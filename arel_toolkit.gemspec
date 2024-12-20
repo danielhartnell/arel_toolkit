@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activerecord', '>= 6.1', '< 7'
   spec.add_dependency 'pg', '>= 1.1.4'
-  spec.add_dependency 'pg_query', '~> 2.2'
+  spec.add_dependency 'pg_query', '~> 5.1'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'dpl', '~> 1.10.11'
