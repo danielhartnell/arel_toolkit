@@ -1,6 +1,7 @@
 #include <libpq-fe.h>
 #include <pg.h>
 #include "pg_result_init.h"
+#include <stdio.h>
 
 VALUE rb_mPgResultInit;
 
@@ -29,6 +30,9 @@ pg_result_init_create(VALUE self, VALUE rb_pgconn, VALUE rb_result, VALUE rb_col
   PGresult *result_copy = PQcopyResult(result, PG_COPYRES_EVENTS | PG_COPYRES_NOTICEHOOKS);
 
   int num_columns = RARRAY_LEN(rb_columns);
+
+  printf("DEBUG: test log\n");
+
   PGresAttDesc *attDescs = malloc(num_columns * sizeof(PGresAttDesc));
 
   if (attDescs == NULL)
