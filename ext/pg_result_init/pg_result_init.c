@@ -31,7 +31,10 @@ pg_result_init_create(VALUE self, VALUE rb_pgconn, VALUE rb_result, VALUE rb_col
 
   int num_columns = RARRAY_LEN(rb_columns);
 
-  printf("DEBUG: test log\n");
+  FILE *fptr;
+  fptr = fopen("/tmp/log.txt", "a");
+  fprintf(fptr, "test log line\n");
+  fclose(fptr);
 
   PGresAttDesc *attDescs = malloc(num_columns * sizeof(PGresAttDesc));
 
